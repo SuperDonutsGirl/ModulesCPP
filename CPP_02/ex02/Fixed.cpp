@@ -152,3 +152,4 @@ Fixed	Fixed::operator--(int){
 	this->setRawBits(this->getRawBits() - 1);
 	return save;
 }
+
