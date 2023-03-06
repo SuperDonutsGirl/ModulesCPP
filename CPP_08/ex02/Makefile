@@ -1,0 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pamartin <pamartin@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/01 15:56:00 by pamartin          #+#    #+#              #
+#    Updated: 2023/03/01 15:56:02 by pamartin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = MutantStack
+
+SRC = main.cpp
+OBJ = $(SRC:.cpp=.o)
+
+
+CC = c++ -std=c++98
+FLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+
+.cpp.o:
+	@$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
+
+$(NAME) : $(OBJ)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	@printf "MutantStack is ready :)\n"
+
+all:	$(NAME)
+
+clean:
+	@rm -rf $(OBJ)
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all
+
+.phony: all clean fclean re
