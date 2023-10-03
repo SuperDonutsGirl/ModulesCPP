@@ -23,7 +23,7 @@ public:
 	ScavTrap();
 	ScavTrap(const std::string &name);
 	ScavTrap(const ScavTrap &inst);
-	void	operator=(const ScavTrap &inst);
+	ScavTrap	&operator=(const ScavTrap &inst);
 	~ScavTrap();
 
 	void attack(std::string const &target);

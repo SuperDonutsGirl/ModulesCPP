@@ -31,7 +31,7 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &inst);
-	void	operator=(const ClapTrap &inst);
+	ClapTrap &operator=(const ClapTrap &inst);
 	~ClapTrap();
 
 	std::string		getName() const;

@@ -14,6 +14,12 @@
 
 int main(){
     int N = 5;
+
+    if (N < 1){
+        std::cout << "Number must be superior to 1";
+        return 1;
+    }
+
     Zombie *horde = zombieHorde(N, "Pamartin");
 
     for (int i = 0; i < N; i++)

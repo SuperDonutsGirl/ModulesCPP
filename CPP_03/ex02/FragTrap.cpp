@@ -31,11 +31,13 @@ FragTrap::FragTrap(const FragTrap &inst) : ClapTrap(inst){
 	std::cout << this->getName() << " (ClapTrap instance) "  << "\n" << std::endl;
 	this->setInstanceAttributs(inst);
 }
-void	FragTrap::operator=(const FragTrap &inst){
+FragTrap	&FragTrap::operator=(const FragTrap &inst){
 	callFragTrapAnnouce();
 	std::cout << "Assignation operator called -> " << inst.getName() << " is cloned, ";
 	std::cout << "now " << this->getName() << " is " << inst.getName() << "\n" << std::endl;
 	this->setInstanceAttributs(inst);
+
+	return *this;
 }
 FragTrap::~FragTrap(){
 	callFragTrapAnnouce();

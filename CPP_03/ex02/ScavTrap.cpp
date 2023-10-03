@@ -31,11 +31,13 @@ ScavTrap::ScavTrap(const ScavTrap &inst) : ClapTrap(inst){
 	std::cout << this->getName() << " (ClapTrap instance) "  << "\n" << std::endl;
 	this->setInstanceAttributs(inst);
 }
-void	ScavTrap::operator=(const ScavTrap &inst){
+ScavTrap	&ScavTrap::operator=(const ScavTrap &inst){
 	callScavTrapAnnouce();
 	std::cout << "Assignation operator called -> " << inst.getName() << " is cloned, ";
 	std::cout << "now " << this->getName() << " is " << inst.getName() << "\n" << std::endl;
 	this->setInstanceAttributs(inst);
+
+	return *this;
 }
 ScavTrap::~ScavTrap(){
 	callScavTrapAnnouce();

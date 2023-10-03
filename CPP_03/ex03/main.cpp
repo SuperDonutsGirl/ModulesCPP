@@ -18,14 +18,12 @@
 int main(){
 	DiamondTrap Diamond("Bobette");
 
-
 	Diamond.whoAmI();
 	Diamond.getProfil();
 
 	Diamond.attack("Robert");
-	
-	
 
+	
 	Diamond.guardGate();
 	Diamond.highFivesGuys();
 

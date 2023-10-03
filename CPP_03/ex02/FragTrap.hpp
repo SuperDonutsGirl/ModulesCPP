@@ -23,7 +23,7 @@ public:
 	FragTrap();
 	FragTrap(const std::string &name);
 	FragTrap(const FragTrap &inst);
-	void	operator=(const FragTrap &inst);
+	FragTrap	&operator=(const FragTrap &inst);
 	~FragTrap();
 
 	void	highFivesGuys(void);

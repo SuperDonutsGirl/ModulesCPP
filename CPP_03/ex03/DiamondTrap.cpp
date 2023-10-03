@@ -19,6 +19,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap(){
 		std::cout << YELLOW << "\t" << this->getName() << " ~" << WHITE;
 	std::cout << " Is an instance of Claptrap that is half Fragtrap, half ScavTrap.\n" << std::endl;
 	this->name = "Default";
+	ClapTrap::name = this->name + "_clap_name";
 	this->hitPoints = FragTrap::hitPoints;
 	this->energiePoints = ScavTrap::energiePoints;
 	this->attackDammage = FragTrap::attackDammage;
@@ -47,7 +48,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &inst)
 	this->attackDammage = inst.attackDammage;
 }
 
-void	DiamondTrap::operator=(const DiamondTrap &inst){
+DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &inst){
 	callDiamondTrapAnnouce();
 	std::cout << "Assignation operator called -> " << inst.name << " is cloned, ";
 	std::cout << "now " << this->name << " is " << inst.name << "\n" << std::endl;
@@ -55,6 +56,8 @@ void	DiamondTrap::operator=(const DiamondTrap &inst){
 	this->hitPoints = inst.hitPoints;
 	this->energiePoints = inst.energiePoints;
 	this->attackDammage = inst.attackDammage;
+
+	return *this;
 }
 
 DiamondTrap::~DiamondTrap(){
@@ -69,7 +72,7 @@ DiamondTrap::~DiamondTrap(){
 void	DiamondTrap::whoAmI(){
 	callDiamondTrapAnnouce();
 	std::cout << "My Diamond name is " << this->name;
-	std::cout << " end my Clap name is " << ClapTrap::name << std::endl;
+	std::cout << " and my Clap name is " << ClapTrap::name << std::endl;
 }
 
 

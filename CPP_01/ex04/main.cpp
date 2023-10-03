@@ -42,6 +42,10 @@ int main(int argc, char **argv){
 	
 	std::string s1 = argv[2];
 	std::string	s2 = argv[3];
+	
+	if (access(argv[1], F_OK) != 0)
+		return msg_error(O_NOT_FILE);
+
 	std::ifstream	file(argv[1]);
 
 	if (!file)

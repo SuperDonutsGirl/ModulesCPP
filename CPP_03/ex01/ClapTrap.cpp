@@ -33,12 +33,14 @@ ClapTrap::ClapTrap(const ClapTrap &inst){
 	this->setInstanceAttributs(inst);
 	this->getProfil();
 }
-void	ClapTrap::operator=(const ClapTrap &inst){
+ClapTrap	&ClapTrap::operator=(const ClapTrap &inst){
 	callClapTrapAnnouce();
 	std::cout << "Assignation operator called -> " << inst.getName() << " is cloned, ";
 	std::cout << "now " << this->getName() << " is " << inst.getName() << std::endl;
 	this->setInstanceAttributs(inst);
 	this->getProfil();
+
+	return *this;
 }
 ClapTrap::~ClapTrap(){
 	callClapTrapAnnouce();
