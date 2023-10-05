@@ -17,6 +17,12 @@ Brain::Brain(){
 	std::cout << "His Brain was also coonstructed" << std::endl;
 }
 
+Brain::Brain(const Brain &inst){
+	for (int i = 0; i < 100; i++)
+		this->idea[i] = inst.idea[i];
+	this->id = inst.id;
+}
+
 Brain::~Brain(){
 	std::cout << "His Brain was destroyed" << std::endl;
 }
@@ -39,7 +45,7 @@ void	Brain::setIdea(std::string idea){
 		this->idea[this->id] = idea;
 }
 
-std::string Brain::getIdea(int id){
+std::string Brain::getIdea(unsigned int id){
 	if (id >= 100)
 		return "Unable to access an idea that exceeds the size of the brain";
 	else

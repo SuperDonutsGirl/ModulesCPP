@@ -26,17 +26,15 @@ Dog::~Dog(){
 	delete this->brain;
 	std::cout << this->type << " was destroyed" << std::endl;
 }
-Animal&		Dog::operator=(const Animal	&inst)
+Dog	&Dog::operator=(const Dog	&inst)
 {
-	const Dog	*newDog;
+	if (this != &inst){
+		this->setType(inst.getType());
+		delete this->brain;
+		this->brain = new Brain;
+		*this->brain = *(inst.brain);
 
-	newDog= dynamic_cast<const Dog *>(&inst);
-	if (newDog)
-	{
-		this->type = newDog->type;
-		*this->brain = *newDog->brain;
 	}
-
 	return (*this);
 }
 

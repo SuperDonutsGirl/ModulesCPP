@@ -1,48 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamartin <pamartin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 14:33:46 by pamartin          #+#    #+#             */
-/*   Updated: 2023/01/30 14:34:00 by pamartin         ###   ########.fr       */
+/*   Created: 2023/01/31 11:07:34 by pamartin          #+#    #+#             */
+/*   Updated: 2023/01/31 11:07:36 by pamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat"){
+WrongCat::WrongCat() : WrongAnimal("WrongCat"){
 	std::cout << this->type <<  " Default constructor called" << std::endl;
-	this->brain = new Brain;
 }
-Cat::Cat(const Cat &inst) : Animal(inst){
+WrongCat::WrongCat(const WrongCat &inst) : WrongAnimal(inst){
 	this->setType(inst.getType());
-	this->brain = new Brain;
-	*this->brain = *(inst.brain);
 	std::cout << "Copy-Constructor of " << this->type << std::endl;
 }
-Cat::~Cat(){
-	delete this->brain;
+WrongCat::~WrongCat(){
 	std::cout << this->type << " was destroyed" << std::endl;
 }
-Cat	&Cat::operator=(const Cat	&inst)
-{
-	if (this != &inst){
-		this->setType(inst.getType());
-		delete this->brain;
-		this->brain = new Brain;
-		*this->brain = *(inst.brain);
-
-	}
-	return (*this);
+WrongCat	&WrongCat::operator=(const WrongCat &inst){
+	this->setType(inst.getType());
+	std::cout << "WrongCat Operator Constructor called" << std::endl;
+	return *this;
 }
 
-void    Cat::makeSound() const{
-    std::cout << "*** Miawo Miawo ***" << std::endl;
-}
-
-
-Brain	*Cat::getBrain() const{
-	return this->brain;
+void    WrongCat::makeSound() const{
+    std::cout << "*** Wrong Miawo ***" << std::endl;
 }

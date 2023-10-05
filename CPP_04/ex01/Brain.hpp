@@ -18,16 +18,17 @@
 class Brain
 {
 	protected:
-		std::string idea[100];
-		int			id;
+		std::string 			idea[100];
+		unsigned int			id;
 	public:
 		Brain();
+		Brain(const Brain &inst);
 		~Brain();
 
 		Brain&	operator=(const Brain& inst);
 		
 		void		setIdea(std::string idea);
-		std::string	getIdea(int id);
+		std::string	getIdea(unsigned int id);
 };
 
 #endif

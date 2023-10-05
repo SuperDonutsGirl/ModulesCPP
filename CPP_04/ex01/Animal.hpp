@@ -26,13 +26,12 @@ class Animal
 		Animal(const Animal &inst);
 		virtual ~Animal();
 		
-		virtual Animal		&operator=(const Animal &inst);
+		Animal		&operator=(const Animal &inst);
 
 		void				setType(const std::string &type);
 		const std::string	&getType() const;
 
 		virtual void		makeSound() const;
-		virtual Brain		*getBrain(void) const = 0;
 };
 
 #endif
