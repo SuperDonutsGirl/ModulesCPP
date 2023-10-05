@@ -13,7 +13,7 @@
 #include "Animal.hpp"
 
 //Orthodox canonical form
-Animal::Animal(){
+Animal::Animal() : type("default animal"){
 	std::cout << "Default Animal Constructor called" << std::endl;
 }
 Animal::Animal(std::string type){

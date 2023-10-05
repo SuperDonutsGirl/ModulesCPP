@@ -30,7 +30,7 @@ class WrongAnimal
 		void		setType(std::string type);
 		std::string getType() const;
 
-		void		makeSound() const;
+		virtual void		makeSound() const;
 };
 
 #endif

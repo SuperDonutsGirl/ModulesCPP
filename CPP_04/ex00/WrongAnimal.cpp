@@ -13,7 +13,7 @@
 #include "WrongAnimal.hpp"
 
 //Orthodox canonical form
-WrongAnimal::WrongAnimal(){
+WrongAnimal::WrongAnimal() : type("default wrongAnimal"){
 	std::cout << "Default WrongAnimal Constructor called" << std::endl;
 }
 WrongAnimal::WrongAnimal(std::string type){
