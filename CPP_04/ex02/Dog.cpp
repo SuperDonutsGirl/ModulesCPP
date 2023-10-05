@@ -38,19 +38,6 @@ Dog&		Dog::operator=(const Dog &inst)
 	return (*this);
 }
 
-Animal&		Dog::operator=(const Animal	&inst)
-{
-	const Dog	*newDog;
-
-	newDog = dynamic_cast<const Dog *>(&inst);
-	if (newDog)
-	{
-		this->type = newDog->type;
-		*this->brain = *newDog->brain;
-	}
-	return (*this);
-}
-
 void    Dog::makeSound() const{
     std::cout << "*** Wouf Wouf ***" << std::endl;
 }

@@ -38,20 +38,6 @@ Cat&		Cat::operator=(const Cat &inst)
 	return (*this);
 }
 
-Animal&		Cat::operator=(const Animal	&inst)
-{
-	const Cat	*newCat;
-
-	newCat= dynamic_cast<const Cat *>(&inst);
-	if (newCat)
-	{
-		this->type = newCat->type;
-		*this->brain = *newCat->brain;
-	}
-
-	return (*this);
-}
-
 void    Cat::makeSound() const{
     std::cout << "*** Miawo Miawo ***" << std::endl;
 }

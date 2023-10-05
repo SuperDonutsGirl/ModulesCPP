@@ -15,7 +15,7 @@
 Dog::Dog() : Animal("Dog"){
 	std::cout << this->type <<  " Default constructor called" << std::endl;
 }
-Dog::Dog(const Dog &inst) : Animal("Dog)"){
+Dog::Dog(const Dog &inst) : Animal(inst){
 	this->setType(inst.getType());
     std::cout << "Copy-Constructor of " << this->type << std::endl;
 }

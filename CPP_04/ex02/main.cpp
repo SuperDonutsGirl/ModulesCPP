@@ -15,46 +15,29 @@
 #include "Cat.hpp"
 
 
-int main(){
-	Animal	*animals[10];
+int main()
+{
+	// Animal animal;
+	Animal *animals[10];
 
-	for (int i = 0; i < 10; i++){
-		if (i % 2){
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2)
+		{
 			animals[i] = new Cat();
 			std::cout << std::endl;
 		}
-		else{
+		else
+		{
 			animals[i] = new Dog();
 			std::cout << std::endl;
 		}
 	}
 
-	animals[0]->getBrain()->setIdea("blabla");
-
-	std::cout << "1st idea of animals[0]" << std::endl;
-	std::cout << animals[0]->getBrain()->getIdea(0) << std::endl;
-	std::cout << "1st idea of animals[2]" << std::endl;
-	std::cout << animals[2]->getBrain()->getIdea(0) << std::endl;
-
-	std::cout << std::endl;
-	std::cout << "copy" << std::endl;
-	*animals[2] = *animals[0];
-
-	std::cout << "1st idea of animals[0]" << std::endl;
-	std::cout << animals[0]->getBrain()->getIdea(0) << std::endl;
-	std::cout << "1st idea of animals[2]" << std::endl;
-	std::cout << animals[2]->getBrain()->getIdea(0) << std::endl;
-
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-
-	animals[0]->getBrain()->setIdea("blabla animals[0]");
-	animals[2]->getBrain()->setIdea("blabla animals[2]");
-	std::cout << "2nd idea of animals[0]" << std::endl;
-	std::cout << animals[0]->getBrain()->getIdea(1) << std::endl;
-	std::cout << "2nd idea of animals[2]" << std::endl;
-	std::cout << animals[2]->getBrain()->getIdea(1) << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		animals[i]->makeSound();
+	}
 
 	std::cout << std::endl;
 	std::cout << std::endl;
@@ -67,6 +50,47 @@ int main(){
 		std::cout << std::endl;
 	}
 
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "\tCreate neew animals and play with their brain" << std::endl;
+
+	Cat catty;
+	Cat cattyBis;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	catty.getBrain()->setIdea("blabla");
+
+	std::cout << "1st idea of Catty" << std::endl;
+	std::cout << catty.getBrain()->getIdea(0) << std::endl;
+	std::cout << "1st idea of CattyBis" << std::endl;
+	std::cout << cattyBis.getBrain()->getIdea(0) << std::endl;
+
+	std::cout << std::endl;
+	cattyBis = catty;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "1st idea of Catty" << std::endl;
+	std::cout << catty.getBrain()->getIdea(0) << std::endl;
+	std::cout << "1st idea of CattyBis" << std::endl;
+	std::cout << cattyBis.getBrain()->getIdea(0) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	catty.getBrain()->setIdea("blabla Catty");
+	cattyBis.getBrain()->setIdea("blabla CattyBis");
+	std::cout << "2nd idea of Catty" << std::endl;
+	std::cout << catty.getBrain()->getIdea(1) << std::endl;
+	std::cout << "2nd idea of CattyBis" << std::endl;
+	std::cout << cattyBis.getBrain()->getIdea(1) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 

@@ -12,7 +12,7 @@
 
 NAME = Animal
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongCat.cpp WrongAnimal.cpp
 OBJ = $(SRC:.cpp=.o)
 
 

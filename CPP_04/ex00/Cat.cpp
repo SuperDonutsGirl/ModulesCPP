@@ -15,7 +15,7 @@
 Cat::Cat() : Animal("Cat"){
 	std::cout << this->type <<  " Default constructor called" << std::endl;
 }
-Cat::Cat(const Cat &inst) : Animal("Cat)"){
+Cat::Cat(const Cat &inst) : Animal(inst){
 	this->setType(inst.getType());
 	std::cout << "Copy-Constructor of " << this->type << std::endl;
 }

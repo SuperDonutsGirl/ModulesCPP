@@ -11,7 +11,22 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-
+Animal::Animal(){
+	std::cout << "Default Animal Constructor called" << std::endl;
+}
+Animal::Animal(std::string type){
+	this->setType(type);
+	std::cout << "Animal Constructor with parametter called" << std::endl;
+}
+Animal::Animal(const Animal &inst){
+	this->setType(inst.getType());
+	std::cout << "Animal Copy Constructor called" << std::endl;
+}
+Animal	&Animal::operator=(const Animal &inst){
+	this->type = inst.getType();
+	std::cout << "Animal Operator Constructor called" << std::endl;
+	return *this;
+}
 Animal::~Animal(){
 	std::cout << "Animal Destructor called" << std::endl;
 }
@@ -26,7 +41,3 @@ const std::string&	Animal::getType() const{
 }
 
 
-//Make sound
-void	Animal::makeSound() const{
-	std::cout << "*** Animal sound ***" << std::endl;
-}
