@@ -17,7 +17,6 @@
 
 int main()
 {
-	// Animal animal;
 	Animal *animals[10];
 
 	for (int i = 0; i < 10; i++)
