@@ -20,23 +20,10 @@ class Bureaucrat;
 class AForm
 {
 	private:
-		const std::string name;
-		bool state;
-		const int gToSign;
-		const int gToExec;
-
-		class GradeTooHighException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};
-		class GradeTooLowException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};
-		class StateNotYetSigned : public std::exception{
-			public:
-				virtual const char	*what() const throw();
-		};		
+		const std::string _name;
+		bool _state;
+		const int _gToSign;
+		const int _gToExec;	
 	public:
 		AForm();
 		AForm(const std::string name, const int gToSign, const int gToExec);
@@ -54,7 +41,21 @@ class AForm
 		void beSigned(Bureaucrat &employe);
 
     	virtual bool execute(Bureaucrat const &executor)const = 0;
+
 		bool isExecutable(Bureaucrat const &executor) const;
+		
+		class GradeTooHighException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
+		class GradeTooLowException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
+		class StateNotYetSigned : public std::exception{
+			public:
+				virtual const char	*what() const throw();
+		};	
 };
 
 std::ostream&	operator<<(std::ostream &os, AForm &inst);

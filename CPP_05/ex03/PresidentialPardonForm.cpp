@@ -14,23 +14,23 @@
 
 //Cannonical form
 PresidentialPardonForm::PresidentialPardonForm() : 
-	AForm("PresidentialPardonForm", 25, 5), target("Mysterious"){
+	AForm("PresidentialPardonForm", 25, 5), _target("Mysterious"){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : 
-	AForm("PresidentialPardonForm", 25, 5), target(target){
+	AForm("PresidentialPardonForm", 25, 5), _target(target){
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &inst) :
-	target(inst.target){
+	_target(inst._target){
 }
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &inst){
 	AForm::operator=(inst);
-	target = inst.target;
+	_target = inst._target;
 	return *this;
 }
 
@@ -38,7 +38,7 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm
 //Public method for execute
 bool PresidentialPardonForm::execute(Bureaucrat const &executor) const{
 	if (this->isExecutable(executor)){
-		std::cout << target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+		std::cout << _target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 		return true;
 	}
 	return false;

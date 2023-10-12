@@ -21,8 +21,8 @@ class AForm;
 class Bureaucrat
 {
 	private:
-		const std::string name;
-		int	grade;
+		const std::string _name;
+		int	_grade;
 		static const int gMax = 1;
 		static const int gMin = 150;
 	private:
