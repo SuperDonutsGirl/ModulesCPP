@@ -67,36 +67,8 @@ int main(){
         identify(base[i]);
         std::cout << "Indentity with reference : ";
         identify(*base[i]);
-        std::cout << std::endl << std::endl;
         delete base[i];
     }
-
-    // A   *baseA = new A;
-    // B   *baseB = new B;
-    // C   *baseC = new C;
-    // std::cout << "~Base - A ~" << std::endl;
-    // std::cout << "Indentity with pointer   : ";
-    // identify(baseA);
-    // std::cout << "Indentity with reference : ";
-    // identify(*baseA);
-    // std::cout << std::endl << std::endl;
-    // delete baseA;
-
-    // std::cout << "~Base - B ~" << std::endl;
-    // std::cout << "Indentity with pointer   : ";
-    // identify(baseB);
-    // std::cout << "Indentity with reference : ";
-    // identify(*baseB);
-    // std::cout << std::endl << std::endl;
-    // delete baseB;
-
-    // std::cout << "~Base - C ~" << std::endl;
-    // std::cout << "Indentity with pointer   : ";
-    // identify(baseC);
-    // std::cout << "Indentity with reference : ";
-    // identify(*baseC);
-    // std::cout << std::endl << std::endl;
-    // delete baseC;
 
     return 0;
 }
