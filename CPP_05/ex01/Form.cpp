@@ -14,7 +14,7 @@
 
 //Canonical Form
 Form::Form(): 
-	name("DefaultForm"), gToSign(150), gToExec(150){
+	_name("DefaultForm"), _gToSign(150), _gToExec(150){
 		this->setState(false);
 		std::cout << "DefaultForm:" << this->getName() << " has been created";
 		std::cout << " with grade " << this->getGToSign() << " for sign";
@@ -22,7 +22,7 @@ Form::Form():
 }
 
 Form::Form(const std::string name, const int gToSign, const int gToExec):
-	name(name), gToSign(gToSign), gToExec(gToExec){
+	_name(name), _gToSign(gToSign), _gToExec(gToExec){
 		this->setState(false);
 		std::cout << "Form:" << this->getName() << " has been created";
 		std::cout << " with grade " << this->getGToSign() << " for sign";
@@ -30,13 +30,13 @@ Form::Form(const std::string name, const int gToSign, const int gToExec):
 }
 
 Form::Form(Form const &inst):
-	name(inst.getName()), gToSign(inst.getGToSign()), gToExec(inst.getGToSign()){
-		this->setState(inst.state);
+	_name(inst.getName()), _gToSign(inst.getGToSign()), _gToExec(inst.getGToSign()){
+		this->setState(inst._state);
 		std::cout << "Form:" << this->getName() << " has been copied";
 }
 
 Form &Form::operator=(Form const &inst){
-	this->setState(inst.state);
+	this->setState(inst._state);
 	std::cout << "Form:" << this->getName() << " has been copied with operator";
 	return *this;
 }
@@ -47,47 +47,41 @@ Form::~Form(){
 
 //Getter & Setter
 std::string Form::getName() const{
-	return this->name;
+	return this->_name;
 }
 
 int Form::getGToSign() const{
-	return this->gToSign;
+	return this->_gToSign;
 }
 
 int Form::getGToExec() const{
-	return this->gToExec;
+	return this->_gToExec;
 }
 
 bool Form::getState(){
-	return this->state;
+	return this->_state;
 }
 
 void Form::setState(bool state){
-	this->state = state;
+	this->_state = state;
 }
 
 //Overload
 std::ostream&	operator<<(std::ostream &os, Form &inst){
-	std::string state;
-
-	if (inst.getState()){
-		os << "Form:" << inst.getName() << std::endl;
-		std::cout << "\t~Signed:Yes \t~grade to execute:" << inst.getGToExec() << std::endl;
-	}
-	else
-		{os << "Form:" << inst.getName() << std::endl;
-		std::cout << "\t~Signed:No \t~grade to sign:" << inst.getGToSign();
-		std::cout << "\t~grade to execute:" << inst.getGToExec() << std::endl;}
+	const std::string state = inst.getState() ? "Yes" : "No"; 
+	os << "Form:" << inst.getName() << std::endl;
+		std::cout << "\t~Signed:" << state << " \t~grade to sign:" << inst.getGToSign();
+		std::cout << "\t~grade to execute:" << inst.getGToExec() << std::endl;
 	return os;
 }
 
 //Check grade
 const char	*Form::GradeTooHighException::what() const throw(){
-	return ("'s grade is to high for sign ");
+	return (" grade is too high for sign ");
 }
 
 const char	*Form::GradeTooLowException::what() const throw(){
-	return ("'s grade is to low for sign");
+	return (" grade is too low for sign ");
 }
 
 //Function Sign
@@ -96,9 +90,10 @@ void Form::beSigned(Bureaucrat &employe){
 		if (this->getGToSign() < employe.getGrade())
 			throw(Form::GradeTooLowException());
 		else
-			this->setState(true);
+			setState(true);
+			std::cout << employe.getName() << " signs " << this->getName() << std::endl;
 	}
 	catch (Form::GradeTooLowException lower){
-		std::cout << this->getName() << ": "<< employe.getName() << lower.what() << std::endl;
+		std::cout << employe.getName() << "'s" << lower.what() << this->getName() << std::endl;
 	}
 }

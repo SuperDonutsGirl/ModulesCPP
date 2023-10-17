@@ -14,23 +14,23 @@
 
 //Cannonical form
 ShrubberyCreationForm::ShrubberyCreationForm() : 
-	AForm("ShrubberyCreationForm", 145, 137), target("Shrubbery"){
+	AForm("ShrubberyCreationForm", 145, 137), _target("Shrubbery"){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
-	AForm("ShrubberyCreationForm", 145, 137), target(target){
+	AForm("ShrubberyCreationForm", 145, 137), _target(target){
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &inst) :
-	target(inst.target){
+	_target(inst._target){
 }
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &inst){
 	AForm::operator=(inst);
-	target = inst.target;
+	_target = inst._target;
 	return *this;
 }
 
@@ -48,14 +48,18 @@ const std::string trees =
 
 //Public method for execute
 bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
+	std::string fileName = _target + "_shrubbery";
 	if (this->isExecutable(executor)){
-		std::ofstream file(target + "_shrubbery");
-		if (file.bad()){
+		std::ofstream file;
+		file.open(fileName, std::ios::app);
+
+		if (!file.is_open()){
 			std::cout << "Failed to create or open file";
 			return false;
 		}
 		else{
-			file << trees;
+			file << trees << "   Plant by " << executor.getName() << std::endl;
+			file.close();
 			return true;
 		}
 	}

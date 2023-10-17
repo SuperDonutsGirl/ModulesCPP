@@ -18,19 +18,8 @@
 class Bureaucrat
 {
 	private:
-		const std::string name;
-		int	grade;
-		static const int gMax = 1;
-		static const int gMin = 150;
-	private:
-		class GradeTooHighException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};
-		class GradeTooLowException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};
+		const std::string _name;
+		int	_grade;
 	public:
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
@@ -43,6 +32,15 @@ class Bureaucrat
 		
 		void incrementGrade();
 		void decrementGrade();
+
+		class GradeTooHighException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
+		class GradeTooLowException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
 };
 
 std::ostream&	operator<<(std::ostream &os, Bureaucrat &inst);

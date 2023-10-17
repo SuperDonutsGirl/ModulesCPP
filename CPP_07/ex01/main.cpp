@@ -20,23 +20,23 @@ int main(){
     std::cout << "~Integer~" << std::endl;
     iter(integer, 2, printTab);
     iter(integer, 2, getAdr);
-	std::cout << "element[0]: " << &integer[0] << std::endl;
-	std::cout << "element[1]: " << &integer[1] << std::endl;
+	std::cout << "element[0] adr: " << &integer[0] << std::endl;
+	std::cout << "element[1] adr: " << &integer[1] << std::endl;
     std::cout << std::endl;
 
     std::cout << "~Float~" << std::endl;
     iter(floater, 2, printTab);
     iter(floater, 2, getAdr);
-	std::cout << "element[0]: " << &floater[0] << std::endl;
-	std::cout << "element[1]: " << &floater[1] << std::endl;
+	std::cout << "element[0] adr: " << &floater[0] << std::endl;
+	std::cout << "element[1] adr: " << &floater[1] << std::endl;
     std::cout << std::endl;
 
 
     std::cout << "~String~" << std::endl;
     iter(str, 2, printTab);
     iter(str, 2, getAdr);
-	std::cout << "element[0]: " << &str[0] << std::endl;
-	std::cout << "element[1]: " << &str[1] << std::endl;
+	std::cout << "element[0] adr: " << &str[0] << std::endl;
+	std::cout << "element[1] adr: " << &str[1] << std::endl;
     std::cout << std::endl;
 
     return 0;

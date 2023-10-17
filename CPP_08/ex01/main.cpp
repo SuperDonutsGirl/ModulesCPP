@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//For compil
-// c++ -std=c++98 -Wall -Werror -Wextra main.cpp Span.cpp && ./a.out
-
 #include "Span.hpp"
 
 int main(){

@@ -58,8 +58,5 @@ int main(){
     std::cout << "original : " << integer << "  _size:" << integer.size() << std::endl;
     std::cout << "copy     : " << copy << "  _size:" << copy.size() << std::endl;
 
-
-    // Try accessing element with an index out of bounds
-    // std::cout << chartype[10] << std::endl;
     return 0;
 }

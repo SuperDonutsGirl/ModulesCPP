@@ -20,19 +20,10 @@ class Bureaucrat;
 class Form
 {
 	private:
-		const std::string name;
-		bool state;
-		const int gToSign;
-		const int gToExec;
-	private:
-		class GradeTooHighException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};
-		class GradeTooLowException : public std::exception{
-			public:
-				const char	*what() const throw();
-		};		
+		const std::string _name;
+		bool _state;
+		const int _gToSign;
+		const int _gToExec;		
 	public:
 		Form();
 		Form(const std::string name, const int gToSign, const int gToExec);
@@ -48,6 +39,14 @@ class Form
 		void setState(bool state);
 
 		void beSigned(Bureaucrat &employe);
+		class GradeTooHighException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
+		class GradeTooLowException : public std::exception{
+			public:
+				const char	*what() const throw();
+		};
 };
 
 std::ostream&	operator<<(std::ostream &os, Form &inst);

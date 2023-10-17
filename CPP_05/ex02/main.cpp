@@ -37,6 +37,8 @@ int main(){
     std::cout << "\n\t~Execute President's Forms~" <<std::endl;
     s19.execute(Bobette);
     s42.execute(Bob);
+
+    std::cout << std::endl;
     Bobette.executeForm(s19);
     Bobette.executeForm(s42);
 
@@ -45,7 +47,7 @@ int main(){
     Bob.executeForm(s123);
 
     std::cout << "\n\t~Execute Robotomy's Forms~" <<std::endl;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 6; i++)
         s987.execute(Bobette);
 
     std::cout << std::endl << "\n\t~Kill all bureaucrats and forms~" << std::endl;

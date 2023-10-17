@@ -14,25 +14,25 @@
 
 //Cannonical form
 RobotomyRequestForm::RobotomyRequestForm() : 
-	AForm("RobotomyRequestForm", 72, 45), target("RandomRobotomy"){
-        srand(time(0));
+	AForm("RobotomyRequestForm", 72, 45), _target("RandomRobotomy"){
+        // srand(time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : 
-	AForm("RobotomyRequestForm", 72, 45), target(target){
-        srand(time(0));
+	AForm("RobotomyRequestForm", 72, 45), _target(target){
+        // srand(time(0));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &inst) :
-	target(inst.target){
+	_target(inst._target){
 }
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &inst){
 	AForm::operator=(inst);
-	target = inst.target;
+	_target = inst._target;
 	return *this;
 }
 
@@ -42,9 +42,9 @@ bool RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 	if (this->isExecutable(executor)){
 		std::cout << "GRIIIINGGIINGRZZRR" << std::endl;
         if (std::rand() % 2)
-            std::cout << target << " has been robotomized" << std::endl;
+            std::cout << _target << " has been robotomized" << std::endl;
         else
-            std::cout << "failed to robotomized " << target << std::endl;
+            std::cout << "failed to robotomized " << _target << std::endl;
         return true;
     }
 	return false;

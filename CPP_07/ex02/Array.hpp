@@ -19,7 +19,7 @@ template <class T>
 class Array
 {
     private:
-        T *array;
+        T *_array;
         unsigned int _size;
     public:
         Array();
@@ -39,22 +39,22 @@ class Array
 /* ************************************ */
 
 template <class T>
-Array<T>::Array() : array(NULL), _size(0){
+Array<T>::Array() : _array(NULL), _size(0){
 }
 
 template <class T>
-Array<T>::Array(unsigned int n) : array(new T[n]), _size(n){
+Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n){
 }
 
 template <class T>
 Array<T>::Array(Array &inst) : _size(inst.size()){
     for (unsigned int i = 0; i < _size; i++)
-        array[i] = inst.array[i];
+        _array[i] = inst._array[i];
 }
 
 template <class T>
 Array<T>::~Array(){
-    delete[] array;
+    delete[] _array;
 }
 
 
@@ -67,17 +67,17 @@ template <class T>
 T &Array<T>::operator[](unsigned int id){
     if (id < 0 || id >= _size)
         throw std::out_of_range("Index is out of the limits");
-    return array[id];
+    return _array[id];
 }
 
 template <class T>
 Array<T>    &Array<T>::operator=(Array &inst){
     if (_size > 0)
-        delete[] array;
+        delete[] _array;
     _size = inst.size();
-    array = new T[_size];
+    _array = new T[_size];
     for (unsigned int i = 0; i < _size; i++)
-        array[i] = inst.array[i];
+        _array[i] = inst._array[i];
     return *this;
 }
 
