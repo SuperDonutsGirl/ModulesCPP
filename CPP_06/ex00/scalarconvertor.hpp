@@ -31,8 +31,8 @@ enum e_type{
 class ScalarConvertor{
     public:
         ScalarConvertor();
-        // ScalarConvertor(ScalarConvertor &inst);
-        // ScalarConvertor &operator=(ScalarConvertor const &inst);
+        ScalarConvertor(ScalarConvertor &inst);
+        ScalarConvertor &operator=(ScalarConvertor const &inst);
         ~ScalarConvertor();
 
 

@@ -2,6 +2,14 @@
 ScalarConvertor::ScalarConvertor(){
 }
 
+ScalarConvertor::ScalarConvertor(ScalarConvertor const &inst){
+    *this = inst;
+}
+
+ScalarConvertor &ScalarConvertor::operator=(ScalarConvertor const &inst){
+    *this = inst;
+    return *this;
+}
 ScalarConvertor::~ScalarConvertor(){
 }
 
