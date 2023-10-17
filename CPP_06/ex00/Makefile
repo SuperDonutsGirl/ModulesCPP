@@ -12,7 +12,7 @@
 
 NAME = ScalarConvertor
 
-SRC = main.cpp identification.cpp display.cpp convert.cpp
+SRC = main.cpp identification.cpp display.cpp convert.cpp ScalarConvertor.cpp
 OBJ = $(SRC:.cpp=.o)
 
 

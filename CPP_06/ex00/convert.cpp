@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarconvertor.hpp"
+#include "ScalarConvertor.hpp"
 
 void	convertToChar(std::string element){
 	int convert = static_cast<int>(element[0]);

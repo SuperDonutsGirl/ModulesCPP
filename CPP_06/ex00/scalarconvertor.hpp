@@ -18,10 +18,29 @@
 #include <limits>
 #include <cfloat>
 
+
 enum e_type{
+    CHAR,
+    INT,
     FLOAT,
-    DOUBLE
+    DOUBLE,
+    ERR
 };
+
+
+class ScalarConvertor{
+    public:
+        ScalarConvertor();
+        // ScalarConvertor(ScalarConvertor &inst);
+        // ScalarConvertor &operator=(ScalarConvertor const &inst);
+        ~ScalarConvertor();
+
+
+        static void	convert(std::string literal);
+
+};
+
+
 
 //Argument identification functions
 bool	isChar(std::string element);
@@ -42,4 +61,5 @@ void	convertToChar(std::string element);
 void	convertToInt(std::string element);
 void	convertToFloat(std::string element);
 void	convertToDouble(std::string element);
+
 #endif

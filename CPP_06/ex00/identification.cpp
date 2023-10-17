@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarconvertor.hpp"
+#include "ScalarConvertor.hpp"
 
 static bool isExeption(std::string element, int type){
 	if (type == FLOAT)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarconvertor.hpp"
+#include "ScalarConvertor.hpp"
 
 void	displayChar(int element){
 	std::cout << "char: ";

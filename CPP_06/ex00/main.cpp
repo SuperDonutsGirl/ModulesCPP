@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarconvertor.hpp"
+#include "ScalarConvertor.hpp"
 
 int main(int argc, char **argv){
 
@@ -19,20 +19,11 @@ int main(int argc, char **argv){
 		return 1;
 	}
 
-	std::string element = argv[1];
+	std::string 	element = argv[1];
+	ScalarConvertor convertor;
 
-	if (isChar(element))
-		convertToChar(element);
-	else if (isInt(element))
-		convertToInt(element);
-	else if (isFloat(element))
-		convertToFloat(element);
-	else if (isDouble(element))
-		convertToDouble(element);
-	else{
-		std::cout << "'" << element << "' can't be converted" << std::endl;
-		return 1;
-	}
+	convertor.convert(element);
+
 	return 0;
 }
 
