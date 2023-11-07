@@ -3,28 +3,28 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pamartin <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pamartin <pamartin@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/28 13:06:12 by pamartin          #+#    #+#              #
-#    Updated: 2023/03/28 13:06:15 by pamartin         ###   ########.fr        #
+#    Created: 2023/11/06 16:22:17 by pamartin          #+#    #+#              #
+#    Updated: 2023/11/06 16:22:19 by pamartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = btc
+NAME = RPN
 
-SRC = main.cpp BitcoinExchange.cpp
+SRC = main.cpp RPN.cpp
 OBJ = $(SRC:.cpp=.o)
 
 
 CC = c++ -std=c++98
-FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -fsanitize=address
 
 .cpp.o:
 	@$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@printf "Bitcoin Exchange is ready :)\n"
+	@printf "Reverse Polish Notaition is ready :)\n"
 
 all:	$(NAME)
 
@@ -37,4 +37,5 @@ fclean: clean
 re: fclean all
 
 .phony: all clean fclean re
+
 
