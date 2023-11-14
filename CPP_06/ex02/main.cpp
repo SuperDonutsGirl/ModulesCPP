@@ -35,6 +35,7 @@ void identify(Base* p){
 }
 
 void identify(Base& p){
+
     Base base;
 
     try{
@@ -54,14 +55,15 @@ void identify(Base& p){
             catch(std::bad_cast){}
         }
     }
-    std::cout << std::endl;
+    std::cout << "\nDESTRUCTION BASE UTILS INSIDE REF :";
+    // std::cout << std::endl;
 }
 
 int main(){
     Base *base[15];
 
     for (int i = 0; i < 15; i++){
-        std::cout << "~Base[" << i << "]~" << std::endl;
+        std::cout << "\n~Base[" << i << "]~" << std::endl;
         base[i] = generate();
         std::cout << "Indentity with pointer   : ";
         identify(base[i]);
@@ -69,6 +71,8 @@ int main(){
         identify(*base[i]);
         delete base[i];
     }
+
+
 
     return 0;
 }

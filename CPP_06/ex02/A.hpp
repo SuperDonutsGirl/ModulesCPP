@@ -27,7 +27,7 @@ A::A(){
 }
 
 A::~A(){
-    std::cout << "A destructor called!" << std::endl << std::endl;
+    std::cout << "A destructor called!" << std::endl;
 }
 
 #endif

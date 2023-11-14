@@ -28,7 +28,7 @@ C::C(){
 }
 
 C::~C(){
-    std::cout << "C destructor called!" << std::endl << std::endl;
+    std::cout << "C destructor called!" << std::endl;
 }
 
 #endif

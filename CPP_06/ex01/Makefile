@@ -12,7 +12,7 @@
 
 NAME = Serialization
 
-SRC = main.cpp
+SRC = main.cpp Serializer.cpp
 OBJ = $(SRC:.cpp=.o)
 
 

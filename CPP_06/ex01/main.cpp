@@ -10,25 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.hpp"
+#include "Serializer.hpp"
 
 int main(){
     Data *first;
     Data *second;
     uintptr_t raw;
+    Serializer serializer;
 
     //Allocate first data;
     first = new Data;
 
     //Get first data address with serialize function 
-    raw = serialize(first);
+    raw = serializer.serialize(first);
     std::cout << "Fisrt data address  : "; 
     std::cout << raw << std::endl;
 
+
     //Deserialize second data with first data address
-    second = deserialize(raw);
+    second = serializer.deserialize(raw);
+    
     //Get first data address with serialize function 
-    raw = serialize(second);
+    raw = serializer.serialize(second);
     std::cout << "Second data address : "; 
     std::cout << raw << std::endl;
 
@@ -39,5 +42,6 @@ int main(){
     std::cout << "content second data : " << second->content << std::endl;
 
     delete first;
+
     return 0;
 }

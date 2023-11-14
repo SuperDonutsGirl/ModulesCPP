@@ -22,6 +22,7 @@ class Base
 };
 
 Base::~Base(){
+    std::cout << "Base destructor" << std::endl;
 }
 
 
