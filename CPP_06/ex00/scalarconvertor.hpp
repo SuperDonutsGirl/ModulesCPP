@@ -31,10 +31,9 @@ enum e_type{
 class ScalarConvertor{
     public:
         ScalarConvertor();
-        ScalarConvertor(ScalarConvertor &inst);
+        ScalarConvertor(ScalarConvertor const &inst);
         ScalarConvertor &operator=(ScalarConvertor const &inst);
         ~ScalarConvertor();
-
 
         static void	convert(std::string literal);
 

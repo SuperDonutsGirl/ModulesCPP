@@ -31,8 +31,8 @@ class Span
 
         void    addNumber(int nb);
         void	addNumber(std::vector<int> vector);
-        int     shortestSpan();
-        int     longestSpan();
+        std::string     shortestSpan();
+        std::string     longestSpan();
 
         class SpanTooShortException : public std::exception{
 			public:

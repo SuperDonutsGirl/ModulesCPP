@@ -1,4 +1,5 @@
 #include "ScalarConvertor.hpp"
+
 ScalarConvertor::ScalarConvertor(){
 }
 
@@ -7,9 +8,11 @@ ScalarConvertor::ScalarConvertor(ScalarConvertor const &inst){
 }
 
 ScalarConvertor &ScalarConvertor::operator=(ScalarConvertor const &inst){
-    *this = inst;
+    (void) inst;
     return *this;
 }
+
+
 ScalarConvertor::~ScalarConvertor(){
 }
 

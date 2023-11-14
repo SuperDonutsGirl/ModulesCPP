@@ -40,6 +40,7 @@ class Array
 
 template <class T>
 Array<T>::Array() : _array(NULL), _size(0){
+    std::cout << "Hello batarrrrd" << _size << std::endl;
 }
 
 template <class T>
@@ -47,17 +48,17 @@ Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n){
 }
 
 template <class T>
-Array<T>::Array(Array &inst) : _size(inst.size()){
-    for (unsigned int i = 0; i < _size; i++)
-        _array[i] = inst._array[i];
+Array<T>::Array(Array &inst){
+        _size = inst.size();
+        _array = new T[_size];
+        for (unsigned int i = 0; i < _size; i++)
+            _array[i] = inst._array[i];
 }
 
 template <class T>
 Array<T>::~Array(){
     delete[] _array;
 }
-
-
 
 
 /* ************************************ */
@@ -72,12 +73,14 @@ T &Array<T>::operator[](unsigned int id){
 
 template <class T>
 Array<T>    &Array<T>::operator=(Array &inst){
-    if (_size > 0)
-        delete[] _array;
-    _size = inst.size();
-    _array = new T[_size];
-    for (unsigned int i = 0; i < _size; i++)
-        _array[i] = inst._array[i];
+    if (this != &inst){
+        if (_size > 0)
+            delete[] _array;
+        _size = inst.size();
+        _array = new T[_size];
+        for (unsigned int i = 0; i < _size; i++)
+            _array[i] = inst._array[i];
+    }
     return *this;
 }
 

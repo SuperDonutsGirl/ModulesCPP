@@ -28,7 +28,8 @@ int main(){
 		set.insert(i + 2);
 	}
 
-	std::cout << "\nPrint every containers and call easyfind for each\n" << std::endl;
+	std::cout << "Print every containers and call easyfind for each\n" << std::endl;
+	
 	std::cout << "List : ";
 	for (std::list<int>::iterator it = li.begin(); it != li.end(); it++){
 		std::cout << *it << " ";

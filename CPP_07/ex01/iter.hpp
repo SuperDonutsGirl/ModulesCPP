@@ -32,9 +32,4 @@ void iter(T *tab, size_t _size, void (*f)(T &)){
     }
 }
 
-
-
-
-
-
 #endif

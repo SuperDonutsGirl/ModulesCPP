@@ -21,9 +21,7 @@ class Base
         virtual ~Base();
 };
 
-Base::~Base(){
-    std::cout << "Base destructor" << std::endl;
-}
+
 
 
 #endif

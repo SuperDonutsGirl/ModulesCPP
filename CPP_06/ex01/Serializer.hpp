@@ -11,7 +11,7 @@ typedef struct	s_Data
 class Serializer{
     public:
         Serializer();
-        Serializer(Serializer &inst);
+        Serializer(Serializer const &inst);
         Serializer &operator=(Serializer const &inst);
         ~Serializer();
 

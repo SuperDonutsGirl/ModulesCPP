@@ -15,21 +15,8 @@
 
 #include "Base.hpp"
 
-class C : public Base
-{
-    public:
-        C();
-        ~C();
+class C : public Base{
 };
-
-C::C(){
-    std::cout << "C constructor called!" << std::endl;
-
-}
-
-C::~C(){
-    std::cout << "C destructor called!" << std::endl;
-}
 
 #endif
 

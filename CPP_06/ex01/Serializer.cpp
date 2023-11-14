@@ -3,12 +3,12 @@
 Serializer::Serializer(){
 }
 
-Serializer::Serializer(const &inst){
+Serializer::Serializer(Serializer const &inst){
     *this = inst;
 }
 
 Serializer &Serializer::operator=(Serializer const &inst){
-    *this = inst;
+    (void)inst;
     return *this;
 }
 

@@ -55,8 +55,7 @@ void identify(Base& p){
             catch(std::bad_cast){}
         }
     }
-    std::cout << "\nDESTRUCTION BASE UTILS INSIDE REF :";
-    // std::cout << std::endl;
+    std::cout << std::endl;
 }
 
 int main(){

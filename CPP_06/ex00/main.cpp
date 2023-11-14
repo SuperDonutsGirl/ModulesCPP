@@ -20,9 +20,8 @@ int main(int argc, char **argv){
 	}
 
 	std::string 	element = argv[1];
-	ScalarConvertor convertor;
 
-	convertor.convert(element);
+	ScalarConvertor::convert(element);
 
 	return 0;
 }

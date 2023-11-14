@@ -58,5 +58,14 @@ int main(){
     std::cout << "original : " << integer << "  _size:" << integer.size() << std::endl;
     std::cout << "copy     : " << copy << "  _size:" << copy.size() << std::endl;
 
+    std::cout << "\nTest with bad index" << std::endl;
+    try{
+        std::cout << integer[10] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
     return 0;
 }

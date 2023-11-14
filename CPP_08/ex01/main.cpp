@@ -20,8 +20,10 @@ int main(){
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
+	sp.addNumber(18);
 
-	std::cout << "~ Shortest and longest span with a baby list" << std::endl;
+
+	std::cout << "\n~ Shortest and longest span with a baby list" << std::endl;
 	std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 	std::cout << "longest: " << sp.longestSpan() << std::endl;
 

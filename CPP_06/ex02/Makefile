@@ -12,7 +12,7 @@
 
 NAME = Identify
 
-SRC = main.cpp
+SRC = main.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 
 
