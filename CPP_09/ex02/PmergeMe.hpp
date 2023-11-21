@@ -20,5 +20,9 @@
 //Mise en place des container avec la liste des nombre
 int fillContainer(char **list, std::deque<int> &deque, std::vector<int> &vector);
 
+//Algo tri
+std::deque<int> mergeInsertSortDeque(std::deque<int> list);
+std::vector<int> mergeInsertSortVector(std::vector<int> list);
+
 #endif
 

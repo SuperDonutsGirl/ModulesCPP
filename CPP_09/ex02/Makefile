@@ -17,7 +17,7 @@ OBJ = $(SRC:.cpp=.o)
 
 
 CC = c++ -std=c++98
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
 
 .cpp.o:
 	@$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
